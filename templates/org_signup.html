@@ -1,0 +1,35 @@
+{% extends "layout.html" %} {% block body %}
+<!-- <div class="row create_user_heading">
+  <div class="col-xs-12 text-center">
+    <h1>Register</h1>
+  </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Register</h1>
+        </div>
+    </div>
+</div>
+<form id="signup_form" action="/submit_new_org" method="post">
+    <div class="form-group">
+        <label for="name">Organization Name:</label>
+        <input class="form-control" type="text" name="name" value="" required autofocus/>
+    </div>
+    <div class="form-group">
+        <label for="name">Email:</label>
+        <input class="form-control" type="email" name="email" value="" required/>
+    </div>
+    <div class="form-group">
+        <label for="name">Password:</label>
+        <input class="form-control" type="password" name="password" value="" required/>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" name="description" rows="8" cols="40"></textarea>
+    </div>
+    <div class="form-group">
+        <button style="margin-bottom: 100px" class="btn btn-primary form-control" type="submit" name="submit">Submit</button>
+    </div>
+</form>
+{% endblock %}
