@@ -1,6 +1,10 @@
 {% extends "layout.html" %} {% block body %}
 
 <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="row center-block">
+    <h1>Open Projects</h1>
+</div>
+<label style="margin-left: 20px" for="">Search available projects by date:</label>
 <div class="search_projects bootstrap-iso">
     <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -39,8 +43,8 @@
 {% for entry in entry_list %}
 <div class="container">
     <div class="jumbotron">
-        <div class="pull-right">
-            <img src="/static/Volunteer_Hands.jpg" alt="" width="700px" />
+        <div class="col-md-8 col-xs-2 pull-right">
+            <img src="/static/Volunteer_Hands.jpg" alt="" width="100vh" />
         </div>
         <label for="">Organization:</label>
         <p>
@@ -59,8 +63,6 @@
             {{entry.time}}
         </p>
         <a href="/register_project">Register</a>
-
-
     </div>
 </div>
 {% endfor %} {% endblock %}

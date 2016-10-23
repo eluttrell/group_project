@@ -192,6 +192,18 @@ def submit_new_event():
     return redirect('/projects')
 
 
+@app.route('/organizations')
+def organizations():
+    query = db.query('select * from organization')
+    results_list = query.namedresult()
+    print results_list[0].name
+    return render_template(
+        'organizations.html',
+        title="Organizations",
+        entry_list=results_list
+    )
+
+
 @app.route('/projects')
 def view_projects():
     query = db.query('select organization.name as Organization, project.name as Project, project.project_description as Description, project.start_date as Time from project, organization where project.organization_id = organization.id')
@@ -209,8 +221,6 @@ def search_bar():
     date = request.form.get('date')
     query = db.query('select organization.name as Organization, project.name as Project, project.project_description as Description, project.start_date as Time from project, organization where project.organization_id = organization.id and start_date = $1', date)
     results_list = query.namedresult()
-
-    print "DATE: %r" % date
     return render_template(
         'projects2.html',
         entry_list=results_list
