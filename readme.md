@@ -1,5 +1,5 @@
-# ${1:Project Name}
-TODO: Write a project description
+# Involved
+Involved is a tool for people seeking to join various types of volunteer activities. It was dreamed up as a way to streamline the volunteer process and help people get involved in community activities as quickly and easily as possible. 
 ## Installation
 TODO: Describe the installation process
 ## Usage
